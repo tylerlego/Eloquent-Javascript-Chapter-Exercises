@@ -55,7 +55,7 @@
 
       const powerRecursive = function(base, exponent) {
         let result =  base;
-;
+        
         if (exponent === 0) {
           return 1;
         } else {
@@ -66,7 +66,30 @@
       console.assert(powerRecursive(2, 0) === 1, {result: powerRecursive(2,0), errorMsg: "power of 0 should always equal 1"});
       console.assert(powerRecursive(2, 1) === 2, {result: powerRecursive(2,1), errorMsg: "power of 1 should always equal base"});
       console.assert(powerRecursive(2, 2) === 4, {result: powerRecursive(2,2), errorMsg: "should equal 4"});
+
+      // HUMMUS
+      const hummus = function(factor) {
+        const ingredient = function(amount, unit, name) {
+          let ingredientAmount = amount * factor;
+          if (ingredientAmount > 1) {
+            unit += "s";
+          }
+          console.log(`${ingredientAmount} ${unit} ${name}`);
+        }
+
+        ingredient(1, "can", "chickpeas");
+        ingredient(0.25, "cup", "tahini");u
+      }
+    
+      function multiplier(factor) {
+        return (num) => num * factor;
+      }
+
+      let twice = multiplier(2);
+
       
+
+
     </script>
   </body>
 </html>
