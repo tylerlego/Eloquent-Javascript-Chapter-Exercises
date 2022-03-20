@@ -14,10 +14,59 @@
     </style>
   </head>
   <body>
-    <h2>Check the console, we need to fix this fast!</h2>
+    <h2>Check the console, you are in the dev branch!</h2>
     
     <script type="text/javascript">
-      console.log("Hello for the hot fix, ok?");
+      const num = 7;
+
+      const square = function(x) {
+        return x * x;
+      }
+
+      const square2 = (x) => (x * x);
+
+      const power = function (base, exponent) {
+        if (base % 1 != 0 || exponent % 1 != 0) {
+          return null;
+        } else {
+          let result = base;
+
+          if (exponent === 0) {
+            return 1;
+          } else if (exponent < 1) {
+            exponent *= -1;
+
+            for (let i = 0; i <= exponent; i++) {
+              result /= base;
+            }
+          } else {
+            for (let i = 1; i < exponent; i++) {
+              result *= result;
+            }
+          }
+
+          return result;
+        }
+      }
+
+      console.assert(power(2, 3) === 16, {result: power(2, 3), errorMsg: "2 to the power of 3 is 16"});
+      console.assert(power(2, 0) === 1, {result: power(2, 0), errorMsg: "powers of 0 should always equal 1"});
+      console.assert(power(2, -2) === 0.25, {result: power(2, -2), errorMsg: "negative powers are fractional"});
+
+      const powerRecursive = function(base, exponent) {
+        let result =  base;
+;
+        if (exponent === 0) {
+          return 1;
+        } else {
+          return base * powerRecursive(base, exponent - 1);
+        }
+      }
+
+      console.assert(powerRecursive(2, 0) === 1, {result: powerRecursive(2,0), errorMsg: "power of 0 should always equal 1"});
+      console.assert(powerRecursive(2, 1) === 2, {result: powerRecursive(2,1), errorMsg: "power of 1 should always equal base"});
+      console.assert(powerRecursive(2, 2) === 4, {result: powerRecursive(2,2), errorMsg: "should equal 4"});
+      
     </script>
   </body>
 </html>
