@@ -87,7 +87,23 @@
 
       let twice = multiplier(2);
 
-      
+      function findSolution(target) { // start at 1, repeatedly add 5 or multiply by 3, solution?
+        function find(current, history) {
+          if (current == target) {
+            return histoty;
+          } else if (current > target) {
+            return null
+          } else {
+            return find(current + 5, `(${history} + 5`) ||
+                   find(current * 3), `(${history} * 3)`;
+          }
+        }
+
+        return find(1, "1");
+      }
+
+      // can 393 be found by adding 5 and multiplying by 3?
+      findSolution(293); 
 
 
     </script>
