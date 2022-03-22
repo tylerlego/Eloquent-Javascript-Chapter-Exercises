@@ -124,7 +124,7 @@
       function printFarmInventory(animals) {
         animals.forEach(animal => {
           if (animal.number) {
-            console.log(`${padZero(animal.number, 3)} ${animal.name}`);
+            // console.log(`${padZero(animal.number, 3)} ${animal.name}`);
           }
         });
       }
@@ -138,6 +138,35 @@
       }
 
       printFarmInventory(animals);
+
+
+      // function Person(firstn, lastn, age, sex) {
+      //   this.firstn = firstn,
+      //   this.lastn = lastn,
+      //   this.age = age,
+      //   this.sex = sex
+      // }
+
+      // const tyler = new Person("Tyler", "Lego", 36, "Male");
+      // const jenni = new Person("Jenni", "Austin", 38, "Female");
+      
+      // Person.prototype.employed = "true";
+
+      // console.log(tyler.employed, jenni.employed);
+
+            // CHAPTER 4 SANDBOX
+
+      let journal = [];
+
+      function addEntry(events, squirrel) {
+        journal.push({events, squirrel});
+      }
+
+      addEntry(["work", "touched tree", "pizza", "running", "television"], false);
+      addEntry(["work", "ice cream", "cauliflower", "lasagna","touched tree", "brushed teeth"], false);
+      addEntry(["weekend", "cycling", "break", "peanuts", "beer"], true);
+
+      console.log(journal);
 
 
     </script>
